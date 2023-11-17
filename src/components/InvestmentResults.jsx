@@ -13,15 +13,18 @@ export default function InvestmentResults({currentData}) {
             );
         // console.table(computedData);
         let interestSummed = 0;
+        let totalInvestement = currentData.initialInvestment.value;
         return computedData.map(year => {
             interestSummed += year.interest;
+            totalInvestement += year.annualInvestment;
+
             return (
                 <tr key={year.year}>
                     <td>{year.year}</td>
                     <td>{formatter.format(year.valueEndOfYear)}</td>
                     <td>{formatter.format(year.interest)}</td>
                     <td>{formatter.format(interestSummed)}</td>
-                    <td>{formatter.format(year.annualInvestment)}</td>
+                    <td>{formatter.format(totalInvestement)}</td>
                 </tr>
             );
         });
