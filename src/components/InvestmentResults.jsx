@@ -29,8 +29,7 @@ export default function InvestmentResults({currentData}) {
 
     return (
         <>
-            <div id="result">
-                <table className="center">
+                <table id="result">
                     <thead>
                         <tr>
                             <th>Year</th>
@@ -44,7 +43,6 @@ export default function InvestmentResults({currentData}) {
                     { printAllLines(currentData) }
                     </tbody>
                 </table>
-            </div>
         </>
     );
 };
