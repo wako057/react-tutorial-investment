@@ -25,7 +25,8 @@ export default function Layout() {
         <>
             <div className="center">
                 <InvestmentForm currentData={currentData} onChangeSelect={handleOnChangeSelect}/>
-                <InvestmentResults currentData={currentData}/>
+                { duration.value == 0 && <p>Please enter a duration greater than 0</p>}
+                { duration.value > 0 && <InvestmentResults currentData={currentData}/>}
             </div>
         </>
     );
